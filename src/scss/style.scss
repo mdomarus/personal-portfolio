@@ -1,0 +1,26 @@
+h1 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px
+}
+
+.page {
+    display: flex;
+}
+
+.sidebar {
+    padding: 1em;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.content {
+    padding: 1em;
+}
+
+.copyright {
+    margin-top: 1em;
+    font-size: 80%;
+}
