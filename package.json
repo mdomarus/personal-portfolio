@@ -1,5 +1,5 @@
 {
-  "name": "michal-domarus-portfolio",
+  "name": "personal-portfolio",
   "private": true,
   "description": "Personal photography portfolio",
   "version": "0.1.0",
@@ -9,7 +9,7 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "jest"
   },
   "dependencies": {
     "gatsby": "^2.0.91",
@@ -18,9 +18,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/mdomarus/personal-portfolio"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/mdomarus/personal-portfolio/issues"
+  },
+  "devDependencies": {
+    "enzyme": "^3.8.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.3",
+    "husky": "^1.3.1",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3"
   }
 }
