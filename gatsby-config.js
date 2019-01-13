@@ -1,3 +1,5 @@
+import path from 'path';
+
 module.exports = {
   plugins: [
     {
@@ -11,6 +13,13 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src', 'images'),
       },
     },
     'gatsby-plugin-react-helmet',
