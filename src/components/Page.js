@@ -4,10 +4,6 @@ import Sidebar from './Sidebar';
 import '../scss/style.scss';
 
 class Page extends Component {
-  static propTypes = {
-    children: PropTypes.object,
-  };
-
   render() {
     const now = new Date();
     const year = now.getFullYear();
