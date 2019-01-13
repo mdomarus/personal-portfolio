@@ -1,4 +1,5 @@
 import React from 'react';
+import Links from './Links';
 
 class Sidebar extends React.Component {
   render() {
@@ -8,8 +9,7 @@ class Sidebar extends React.Component {
       <div className="sidebar">
         <h1>Michał Domarus</h1>
         <h3>Travel</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua.
+        <Links />
         <div className="copyright">{`©${year} Michał Domarus`}</div>
       </div>
     );
