@@ -16,7 +16,11 @@ export default ({ data }) => (
       est laborum.
     </p>
     {data.images.edges.map(el => (
-      <Img className="image" fluid={el.node.childImageSharp.fluid} />
+      <Img
+        key={el.node.childImageSharp.fluid.originalName}
+        className="image"
+        fluid={el.node.childImageSharp.fluid}
+      />
     ))}
   </Page>
 );

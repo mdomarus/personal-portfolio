@@ -9,14 +9,18 @@ class Page extends Component {
   };
 
   render() {
+    const now = new Date();
+    const year = now.getFullYear();
+
     const { children } = this.props;
     return (
-      <div className="page">
-        <Sidebar />
-        <div className="content">
-          {children}
+      <React.Fragment>
+        <div className="page">
+          <Sidebar />
+          <div className="content">{children}</div>
         </div>
-      </div>
+        <div className="copyright">{`©${year} Michał Domarus`}</div>
+      </React.Fragment>
     );
   }
 }

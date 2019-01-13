@@ -36,7 +36,7 @@ class Links extends Component {
   render() {
     return (
       <ul className="links">
-        {travel.map(el => <li><Link to={`/travel/${el.link}`}>{el.title}</Link></li>)}
+        {travel.map(el => <li key={el.link}><Link to={`/travel/${el.link}`}>{el.title}</Link></li>)}
       </ul>
     );
   }
