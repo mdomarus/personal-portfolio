@@ -5,7 +5,7 @@ import Page from '../../components/Page';
 
 export default ({ data }) => (
   <Page>
-    <h1>Paris / France</h1>
+    <h1>Sicily / Italy</h1>
     {data.images.edges.map(el => (
       <Img
         key={el.node.childImageSharp.fluid.originalName}
@@ -21,7 +21,7 @@ export const query = graphql`
     images: allFile(
       filter: {
         sourceInstanceName: { eq: "images" }
-        relativePath: { regex: "/paris/" }
+        relativePath: { regex: "/sicily/" }
       }
       sort: { order: ASC, fields: [name] }
     ) {

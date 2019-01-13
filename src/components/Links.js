@@ -6,30 +6,30 @@ const travel = [
     title: 'Paris',
     link: 'paris',
   },
-  {
-    title: 'Bali',
-    link: 'bali',
-  },
-  {
-    title: 'Japan',
-    link: 'japan',
-  },
-  {
-    title: 'Vietnam',
-    link: 'vietnam',
-  },
-  {
-    title: 'Azores',
-    link: 'azores',
-  },
+  //   {
+  //     title: 'Bali',
+  //     link: 'bali',
+  //   },
+  //   {
+  //     title: 'Japan',
+  //     link: 'japan',
+  //   },
+  //   {
+  //     title: 'Vietnam',
+  //     link: 'vietnam',
+  //   },
+  //   {
+  //     title: 'Azores',
+  //     link: 'azores',
+  //   },
   {
     title: 'Sicily',
     link: 'sicily',
   },
-  {
-    title: 'Rome',
-    link: 'rome',
-  },
+//   {
+//     title: 'Rome',
+//     link: 'rome',
+//   },
 ];
 
 class Links extends Component {
