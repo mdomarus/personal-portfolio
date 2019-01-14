@@ -62,7 +62,7 @@ export const query = graphql`
         sourceInstanceName: { eq: "images" }
         relativePath: { regex: "/slideshow/" }
       }
-      sort: { order: ASC, fields: [name] }
+      # sort: { order: ASC, fields: [name] }
     ) {
       edges {
         node {

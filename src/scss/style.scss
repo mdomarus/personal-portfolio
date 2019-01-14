@@ -2,6 +2,9 @@ body {
     color: #333;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    margin: 0;
+    padding: .5rem;
+    box-sizing: border-box;
 }
 
 h1, h2 {
@@ -33,13 +36,14 @@ a {
 }
 
 .sidebar {
-    padding: 1em;
+    margin-bottom: 2rem;
     text-transform: uppercase;
 
     @media(min-width: 1024px) {
         float: left;
         max-width: 200px;
         min-width: 200px;
+        padding: 1em;
         position: -webkit-sticky;
         position: sticky;
         top: 0;
@@ -53,8 +57,11 @@ a {
     }
 }
 .content {
-    padding: 1em;
     overflow: auto;
+
+    @media(min-width: 1024px) {
+        padding: 1em;
+    }
 }
 
 .copyright {
@@ -71,14 +78,14 @@ a {
     .image {
         height: 0;
         margin: 0;
-        max-height: calc(100vh - 2em);
         opacity: .75;
 
         &--active {
-            opacity: 1;
-            width: auto;
             height: auto;
+            max-height: calc(100vh - 3rem);
+            opacity: 1;
             transition: opacity .25s ease-in;
+            width: auto;
         }
     }
 }
