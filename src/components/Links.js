@@ -18,10 +18,10 @@ const travel = [
   //     title: 'Vietnam',
   //     link: 'vietnam',
   //   },
-  //   {
-  //     title: 'Azores',
-  //     link: 'azores',
-  //   },
+  {
+    title: 'Azores',
+    link: 'azores',
+  },
   {
     title: 'Sicily',
     link: 'sicily',
