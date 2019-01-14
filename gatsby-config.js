@@ -10,16 +10,27 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
         path: path.join(__dirname, 'src', 'images'),
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Roboto Condensed',
+            subsets: ['latin-ext'],
+            variants: ['400', '700'],
+          },
+          {
+            family: 'Montserrat',
+            subsets: ['latin-ext'],
+            variants: ['400', '700'],
+          },
+        ],
       },
     },
     'gatsby-plugin-react-helmet',

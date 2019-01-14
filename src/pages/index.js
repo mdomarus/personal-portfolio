@@ -10,7 +10,7 @@ class Slider extends React.Component {
 
   componentDidMount() {
     this.setState({
-      timer: setInterval(() => this.cycleImage(), 3000),
+      timer: setInterval(() => this.cycleImage(), 4000),
     });
   }
 
