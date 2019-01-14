@@ -56,3 +56,10 @@
 .image {
     margin-bottom: 1em;
 }
+
+.slideshow {
+    .image {
+        // margin: 0;
+        max-height: calc(100vh - 2em);
+    }
+}
