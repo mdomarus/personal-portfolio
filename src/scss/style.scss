@@ -59,7 +59,18 @@
 
 .slideshow {
     .image {
-        // margin: 0;
+        height: 0;
+        margin: 0;
         max-height: calc(100vh - 2em);
+        opacity: 0;
+
+        &--active {
+            opacity: 1;
+            width: auto;
+            height: auto;
+            transition: opacity .5s ease-in;
+            transition: width 0s none .5s;
+            transition: height 0s none .5s;
+        }
     }
 }
