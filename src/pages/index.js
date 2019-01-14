@@ -1,9 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Page from '../components/Page';
 
 class Slider extends React.Component {
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+  }
+
   state = {
     currentSlide: 0,
   };
@@ -15,11 +20,13 @@ class Slider extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.timer);
+    const { timer } = this.state;
+    clearInterval(timer);
   }
 
   cycleImage = () => {
-    const imagesCount = this.props.data.images.edges.length;
+    const { data } = this.props;
+    const imagesCount = data.images.edges.length;
     this.setState(prevState => ({
       currentSlide:
         prevState.currentSlide === imagesCount - 1 ? 0 : prevState.currentSlide + 1,
@@ -27,15 +34,17 @@ class Slider extends React.Component {
   };
 
   render() {
+    const { currentSlide } = this.state;
+    const { data } = this.props;
     return (
       <Page>
         <div className="slideshow">
-          {this.props.data.images.edges.map((el, index) => {
-            const classes = index === this.state.currentSlide
+          {data.images.edges.map((el, index) => {
+            const classes = index === currentSlide
               ? 'image image--active'
               : 'image';
             return (
-              <Img key={`img-${index}`} className={classes} fluid={el.node.childImageSharp.fluid} />
+              <Img key={el.node.originalName} className={classes} fluid={el.node.childImageSharp.fluid} />
             );
           })}
         </div>
