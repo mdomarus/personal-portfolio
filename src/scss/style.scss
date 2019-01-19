@@ -28,7 +28,7 @@ h2 {
 
 ul {
     margin: 0 1em;
-    padding: 0 0 2em 0;
+    padding: 0 0 1em 0;
 }
 
 a {
@@ -57,9 +57,21 @@ a {
 }
 
 .links {
+    display: flex;
+    flex-direction: row;
+    @media(min-width: 1024px) {
+        flex-direction: column
+    }
+
     li {
+        margin-right: 1em;
+        margin-bottom: .5em;
         list-style: none;
     }
+}
+
+.instagram {
+    width: 24px;
 }
 .content {
     overflow: auto;
