@@ -5,9 +5,10 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import Sidebar from './Sidebar';
 import '../scss/style.scss';
+import BackToTop from './BackToTop';
 
 
-const Layout = ({ children }) => (
+const Page = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -37,9 +38,8 @@ const Layout = ({ children }) => (
             <Sidebar />
             <div className="content">
               {children}
-              <a href="#" className="backToTop"><span role="img" aria-label="back to top">🔝</span></a>
-
             </div>
+            <BackToTop />
           </div>
           <div className="copyright">{`©${year} Michał Domarus`}</div>
 
@@ -49,10 +49,10 @@ const Layout = ({ children }) => (
   />
 );
 
-export default Layout;
+export default Page;
 
-Layout.propTypes = {
-  children: PropTypes.object,
+Page.propTypes = {
+  children: PropTypes.array,
 };
 //   render() {
 //     const now = new Date();

@@ -91,14 +91,19 @@ a {
 }
 
 .backToTop {
-    float: right;
-    font-size: 1.5rem;
-    opacity: .5;
+    background: #fff;
+    bottom: .25em;
+    font-size: 2rem;
+    opacity: 0;
+    padding: .25rem;
+    position: fixed;
+    right: -3rem;
     text-decoration: none;
-    transition: opacity .1s ease-out;
-    &:hover {
+    transition: all .1s ease-out;
+    &:hover, &--active {
+        right: .5em;
         opacity: 1;
-        transition: opacity .3s ease-in;
+        transition: all .5s ease-out;
     }
 }
 
