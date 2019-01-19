@@ -1,20 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Page from '../../components/Page';
 
-export default ({ data }) => (
+const Gallery = ({ data: { images: { edges: images } } }) => (
   <Page>
     <h1>Sicily / Italy</h1>
-    {data.images.edges.map(el => (
+    {images.map(({ node: { childImageSharp: { fluid } } }) => (
       <Img
-        key={el.node.childImageSharp.fluid.originalName}
+        key={fluid.originalName}
         className="image"
-        fluid={el.node.childImageSharp.fluid}
+        fluid={fluid}
       />
     ))}
   </Page>
 );
+
+Gallery.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export default Gallery;
 
 export const query = graphql`
   query {
@@ -28,7 +35,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 2048) {
+            fluid(maxWidth: 2048, quality: 75) {
               base64
               aspectRatio
               src

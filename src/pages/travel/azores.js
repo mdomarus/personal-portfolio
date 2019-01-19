@@ -4,10 +4,10 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Page from '../../components/Page';
 
-const Azores = ({ data: { images } }) => (
+const Gallery = ({ data: { images: { edges: images } } }) => (
   <Page>
     <h1>Azores / Portugal</h1>
-    {images.edges.map(({ node: { childImageSharp: { fluid } } }) => (
+    {images.map(({ node: { childImageSharp: { fluid } } }) => (
       <Img
         key={fluid.originalName}
         className="image"
@@ -17,11 +17,11 @@ const Azores = ({ data: { images } }) => (
   </Page>
 );
 
-Azores.propTypes = {
+Gallery.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default Azores;
+export default Gallery;
 
 export const query = graphql`
   query {
