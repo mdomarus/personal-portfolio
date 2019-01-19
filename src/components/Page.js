@@ -35,7 +35,11 @@ const Layout = ({ children }) => (
           </Helmet>
           <div className="page">
             <Sidebar />
-            <div className="content">{children}</div>
+            <div className="content">
+              {children}
+              <a href="#" className="backToTop"><span role="img" aria-label="back to top">🔝</span></a>
+
+            </div>
           </div>
           <div className="copyright">{`©${year} Michał Domarus`}</div>
 

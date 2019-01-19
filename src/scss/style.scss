@@ -87,8 +87,23 @@ a {
     text-align: center;
 }
 
+.backToTop {
+    float: right;
+    font-size: 1.5rem;
+    opacity: .5;
+    text-decoration: none;
+    transition: opacity .1s ease-out;
+    &:hover {
+        opacity: 1;
+        transition: opacity .3s ease-in;
+    }
+}
+
 .image {
+    margin-bottom: .5rem;
+    @media(min-width: 1200px) {
     margin-bottom: 1.6em;
+    }
 }
 
 .slideshow {
