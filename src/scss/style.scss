@@ -1,3 +1,5 @@
+$breakpoint: '800px';
+
 body {
     color: #333;
     font-family: 'Montserrat', sans-serif;
@@ -41,10 +43,10 @@ a {
 }
 
 .sidebar {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     text-transform: uppercase;
 
-    @media(min-width: 1024px) {
+    @media(min-width: $breakpoint) {
         float: left;
         max-width: 200px;
         min-width: 200px;
@@ -59,7 +61,7 @@ a {
 .links {
     display: flex;
     flex-direction: row;
-    @media(min-width: 1024px) {
+    @media(min-width: $breakpoint) {
         flex-direction: column
     }
 
@@ -73,10 +75,11 @@ a {
 .instagram {
     width: 24px;
 }
+
 .content {
     overflow: auto;
 
-    @media(min-width: 1024px) {
+    @media(min-width: $breakpoint) {
         padding: 1em;
     }
 }
@@ -101,7 +104,7 @@ a {
 
 .image {
     margin-bottom: .5rem;
-    @media(min-width: 1200px) {
+    @media(min-width: $breakpoint) {
     margin-bottom: 1.6em;
     }
 }
