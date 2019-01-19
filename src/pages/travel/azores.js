@@ -4,14 +4,14 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Page from '../../components/Page';
 
-const Azores = ({ data }) => (
+const Azores = ({ data: { images } }) => (
   <Page>
     <h1>Azores / Portugal</h1>
-    {data.images.edges.map(el => (
+    {images.edges.map(({ node: { childImageSharp: { fluid } } }) => (
       <Img
-        key={el.node.childImageSharp.fluid.originalName}
+        key={fluid.originalName}
         className="image"
-        fluid={el.node.childImageSharp.fluid}
+        fluid={fluid}
       />
     ))}
   </Page>
