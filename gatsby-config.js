@@ -1,6 +1,10 @@
 const path = require('path');
 
 module.exports = {
+  siteMetadata: {
+    title: 'Michał Domarus',
+    description: 'Personal photography',
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-google-analytics',
