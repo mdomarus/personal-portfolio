@@ -91,17 +91,15 @@ a {
 }
 
 .backToTop {
-    background: #fff;
-    bottom: .25em;
-    font-size: 2rem;
+    bottom: calc(.25rem + .75vw);
     opacity: 0;
     padding: .25rem;
     position: fixed;
     right: -3rem;
     text-decoration: none;
     transition: all .1s ease-out;
-    &:hover, &--active {
-        right: .5em;
+    &--active {
+        right: calc(.5rem + 0.75vw);
         opacity: 1;
         transition: all .5s ease-out;
     }
