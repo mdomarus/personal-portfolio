@@ -1,12 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-
+import PropTypes from 'prop-types';
+import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Sidebar from './Sidebar';
-import '../scss/style.scss';
 import BackToTop from './BackToTop';
-
+import '../scss/style.scss';
 
 const Page = ({ children }) => (
   <StaticQuery
@@ -42,7 +40,6 @@ const Page = ({ children }) => (
             <BackToTop />
           </div>
           <div className="copyright">{`©${year} Michał Domarus`}</div>
-
         </>
       );
     }}
@@ -54,31 +51,3 @@ export default Page;
 Page.propTypes = {
   children: PropTypes.array,
 };
-//   render() {
-//     const now = new Date();
-//     const year = now.getFullYear();
-
-//     const { children } = this.props;
-//     return (
-//       <React.Fragment>
-//         <div className="page">
-//           <Sidebar />
-//           <div className="content">{children}</div>
-//         </div>
-//         <div className="copyright">{`©${year} Michał Domarus`}</div>
-//       </React.Fragment>
-//     );
-//   }
-// }
-
-// export default Page;
-
-// export const query = graphql`
-//   query SiteTitleQuery {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `;
