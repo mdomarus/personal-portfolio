@@ -3,6 +3,10 @@ import { Link } from 'gatsby';
 
 const travel = [
   {
+    title: 'Berlin',
+    link: 'berlin',
+  },
+  {
     title: 'Paris',
     link: 'paris',
   },
