@@ -68,7 +68,6 @@ export const query = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 75) {
-              base64
               aspectRatio
               src
               srcSet
