@@ -49,5 +49,5 @@ const Page = ({ children }) => (
 export default Page;
 
 Page.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };

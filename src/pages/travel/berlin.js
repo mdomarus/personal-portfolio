@@ -12,6 +12,7 @@ const Gallery = ({ data: { images: { edges: images } } }) => (
         key={fluid.originalName}
         className="image"
         fluid={fluid}
+        lazyload
       />
     ))}
   </Page>
