@@ -1,35 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import useInterval from '../hooks/useInterval';
 import Page from '../components/Page';
 
 const Slider = ({ data }) => {
   const [slide, setSlide] = useState(0);
 
-  function useInterval(callback, delay) {
-    const savedCallback = useRef();
-
-    // Remember the latest callback.
-    useEffect(() => {
-      savedCallback.current = callback;
-    }, [callback]);
-
-    // Set up the interval.
-    useEffect(() => {
-      function tick() {
-        savedCallback.current();
-      }
-
-      if (delay !== null) {
-        const id = setInterval(tick, delay);
-        return () => clearInterval(id);
-      }
-    }, [delay]);
-  }
-
   const cycleImage = () => {
-    const imagesCount = data.images.edges.length;
+    const imagesCount = data.images.edges.length - 1;
     setSlide(slide === imagesCount ? 0 : slide + 1);
   };
 
