@@ -1,59 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Page from '../components/Page';
 
-class Slider extends React.Component {
-  static propTypes = {
-    data: PropTypes.object.isRequired,
+const Slider = ({ data }) => {
+  const [slide, setSlide] = useState(0);
+
+  function useInterval(callback, delay) {
+    const savedCallback = useRef();
+
+    // Remember the latest callback.
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+
+    // Set up the interval.
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+
+      if (delay !== null) {
+        const id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
   }
 
-  state = {
-    currentSlide: 0,
-  };
-
-  componentDidMount() {
-    this.setState({
-      timer: setInterval(() => this.cycleImage(), 4000),
-    });
-  }
-
-  componentWillUnmount() {
-    const { timer } = this.state;
-    clearInterval(timer);
-  }
-
-  cycleImage = () => {
-    const { data } = this.props;
+  const cycleImage = () => {
     const imagesCount = data.images.edges.length;
-    this.setState(prevState => ({
-      currentSlide:
-        prevState.currentSlide === imagesCount - 1 ? 0 : prevState.currentSlide + 1,
-    }));
+    setSlide(slide === imagesCount ? 0 : slide + 1);
   };
 
-  render() {
-    const { currentSlide } = this.state;
-    const { data } = this.props;
-    return (
-      <Page>
-        <div className="slideshow">
-          {data.images.edges.map((el, index) => {
-            const classes = index === currentSlide
-              ? 'image image--active'
-              : 'image';
-            return (
-              <Img key={el.node.originalName} className={classes} fluid={el.node.childImageSharp.fluid} />
-            );
-          })}
-        </div>
-      </Page>
-    );
-  }
-}
+  useInterval(
+    cycleImage, 2000,
+  );
+
+  return (
+    <Page>
+      <div className="slideshow">
+        {data.images.edges.map((el, index) => {
+          const classes = index === slide
+            ? 'image image--active'
+            : 'image';
+          return (
+            <Img key={`${el.node.originalName}${index * 2}`} className={classes} fluid={el.node.childImageSharp.fluid} loading="eager" />
+          );
+        })}
+      </div>
+    </Page>
+  );
+};
 
 export default Slider;
+
+Slider.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export const query = graphql`
   query {

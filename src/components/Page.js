@@ -49,5 +49,5 @@ const Page = ({ children }) => (
 export default Page;
 
 Page.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.object,
 };
