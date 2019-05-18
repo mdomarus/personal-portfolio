@@ -7,13 +7,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-132820524-1',
-        respectDNT: true,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-sharp',
       options: {
         useMozJpeg: false,
