@@ -7,6 +7,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-132820524-1',
+        respectDNT: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sharp',
       options: {
         useMozJpeg: false,
@@ -41,11 +48,5 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-78670201-6',
-      },
-    },
   ],
 };
