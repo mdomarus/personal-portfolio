@@ -30,10 +30,14 @@ const travel = [
     title: 'Sicily',
     link: 'sicily',
   },
-//   {
-//     title: 'Rome',
-//     link: 'rome',
-//   },
+  {
+    title: 'Jordan',
+    link: 'jordan',
+  },
+  //   {
+  //     title: 'Rome',
+  //     link: 'rome',
+  //   },
 ];
 
 export default class Links extends Component {
