@@ -30,7 +30,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
-    "sendmail": "^1.6.1"
+    "twilio": "^3.37.0"
   },
   "repository": {
     "type": "git",

@@ -7,7 +7,7 @@ const HighFive = () => {
     if (!clicked) {
       setClicked(true);
       fetch(
-        '/.netlify/functions/hello',
+        '/.netlify/functions/whatsapp',
         {
           method: 'POST',
           mode: 'no-cors',
