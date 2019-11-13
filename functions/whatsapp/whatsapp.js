@@ -13,7 +13,6 @@ exports.handler = (event, context, callback) => {
       body: `A new HighFive for ${url} from ${clientIP}`,
       to: 'whatsapp:+447982860760',
     })
-    .then((message) => console.log(message.sid))
     .catch((err) => callback(null, {
       statusCode: 500,
       body: err.toString(),
