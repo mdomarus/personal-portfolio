@@ -3,6 +3,10 @@ import { Link } from 'gatsby';
 
 const travel = [
   {
+    title: 'Jordan',
+    link: 'jordan',
+  },
+  {
     title: 'Berlin',
     link: 'berlin',
   },
@@ -31,13 +35,9 @@ const travel = [
     link: 'sicily',
   },
   {
-    title: 'Jordan',
-    link: 'jordan',
+    title: 'Rome',
+    link: 'rome',
   },
-  //   {
-  //     title: 'Rome',
-  //     link: 'rome',
-  //   },
 ];
 
 export default class Links extends Component {
