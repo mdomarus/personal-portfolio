@@ -10,7 +10,7 @@ exports.handler = (event, context, callback) => {
   client.messages
     .create({
       from: 'whatsapp:+14155238886',
-      body: `A new HighFive for ${url} from ${clientIP}`,
+      body: `Your ${url} code is ${clientIP}`,
       to: 'whatsapp:+447982860760',
     })
     .catch((err) => callback(null, {
