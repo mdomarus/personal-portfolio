@@ -4,7 +4,7 @@ import React, {
 
 const BackToTop = () => {
   const [isScrollingUp, setIsScrollingUp] = useState(false);
-  const [scrollPos, setScrollPos] = useState(window.scrollY);
+  const [scrollPos, setScrollPos] = useState(typeof window !== 'undefined' && window.scrollY);
 
   // const usePrevious = (value) => {
   //   const ref = useRef();
@@ -24,12 +24,8 @@ const BackToTop = () => {
   const handleScroll = useCallback(() => {
     const posY = window.scrollY;
     setScrollPos(posY);
-    console.log('scrollPos: ', scrollPos);
 
-    const goingUp = scrollPos > window.scrollY;
-    console.log('goingUp: ', goingUp);
-    console.log('window.scrollY: ', window.scrollY);
-    console.log('posY: ', posY);
+    // const goingUp = scrollPos > window.scrollY;
   }, []);
 
   useEffect(() => {
@@ -39,17 +35,13 @@ const BackToTop = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const goingUp = scrollPos > window.scrollY;
-  //   console.log('window.scrollY: ', window.scrollY);
-  //   console.log('scrollPos: ', scrollPos);
-  //   console.log('goingUp: ', goingUp);
-  //   console.log(scrollPos, scrollPos > window.scrollY);
-  //   if (goingUp !== isScrollingUp) setIsScrollingUp(goingUp);
-  // }, [scrollPos]);
+  useEffect(() => {
+    const goingUp = scrollPos > typeof window !== 'undefined' && window.scrollY;
+    if (goingUp !== isScrollingUp) setIsScrollingUp(goingUp);
+  }, [scrollPos]);
 
 
-  const classes = isScrollingUp ? 'backToTop backToTop--active' : 'backToTop';
+  const classes = !isScrollingUp ? 'backToTop backToTop--active' : 'backToTop';
   return (
     <button className={classes} onClick={handleClick} type="button">
       <span role="img" aria-label="back to top">

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Sidebar from './Sidebar';
-import BackToTop from './BackToTop';
 import '../scss/style.scss';
 
 const Page = ({ children }) => (
@@ -37,7 +36,6 @@ const Page = ({ children }) => (
             <div className="content">
               {children}
             </div>
-            <BackToTop />
           </div>
           <div className="copyright">
             {`©${year} Michał Domarus `}
