@@ -1,168 +1,160 @@
+@import "./node_modules/applause-button/src/applause-button.scss";
+
 $breakpoint: "800px";
 
 body {
-  color: #333;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  margin: 0;
-  padding: 0.5rem;
-  box-sizing: border-box;
+	color: #333;
+	font-family: "Montserrat", sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 0.5rem;
+	box-sizing: border-box;
 }
 
 h1,
 h2 {
-  font-family: "Roboto Condensed", sans-serif;
-  font-weight: 700;
-  margin: 1em 0 0.5em 0;
+	font-family: "Roboto Condensed", sans-serif;
+	font-weight: 700;
+	margin: 1em 0 0.5em 0;
 }
 
 h1 {
-  font-size: 150%;
-  a {
-    background: none;
-    text-decoration: none;
-  }
+	font-size: 150%;
+	a {
+		background: none;
+		text-decoration: none;
+	}
 }
 
 h2 {
-  font-size: 120%;
+	font-size: 120%;
 }
 
 ul {
-  margin: 0 1em;
-  padding: 0 0 1em 0;
+	margin: 0 1em;
+	padding: 0 0 1em 0;
 }
 
 a {
-  color: inherit;
+	color: inherit;
 }
 
 .page {
-  max-width: 1400px;
-  margin: 0 auto;
-  min-height: calc(100vh - 4em);
+	max-width: 1400px;
+	margin: 0 auto;
+	min-height: calc(100vh - 6em);
 }
 
 .sidebar {
-  margin-bottom: 2em;
-  text-transform: uppercase;
+	margin-bottom: 2em;
+	text-transform: uppercase;
 
-  @media (min-width: $breakpoint) {
-    float: left;
-    max-width: 200px;
-    min-width: 200px;
-    padding: 1em;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    width: 200px;
-  }
+	@media (min-width: $breakpoint) {
+		float: left;
+		max-width: 200px;
+		min-width: 200px;
+		padding: 1em;
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		width: 200px;
+	}
 }
 
 .links {
-  display: flex;
-  flex-direction: row;
-  @media (min-width: $breakpoint) {
-    flex-direction: column;
-  }
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	@media (min-width: $breakpoint) {
+		flex-direction: column;
+	}
 
-  li {
-    margin-right: 1em;
-    margin-bottom: 0.5em;
-    list-style: none;
-  }
+	li {
+		margin-right: 1em;
+		margin-bottom: 0.5em;
+		list-style: none;
+	}
 }
 
 .instagram {
-  width: 1em;
+	width: 1em;
 }
 
 .content {
-  overflow: auto;
+	overflow: auto;
 
-  @media (min-width: $breakpoint) {
-    padding: 1em;
-  }
+	@media (min-width: $breakpoint) {
+		padding: 1em;
+	}
 
-  h1 {
-    margin-top: 0;
-    @media (min-width: $breakpoint) {
-      margin-top: 1em;
-    }
-  }
+	h1 {
+		margin-top: 0;
+		@media (min-width: $breakpoint) {
+			margin-top: 1em;
+		}
+	}
 }
 
 .copyright {
-  margin: 1em 0;
-  text-align: center;
+	margin: 1em 0;
+	text-align: center;
 
-  a {
-    vertical-align: middle;
-    margin-left: 0.5em;
-  }
+	a {
+		vertical-align: middle;
+		margin-left: 0.5em;
+	}
 }
 
 .backToTop {
-  bottom: calc(0.25rem + 0.75vw);
-  border: none;
-  background: transparent;
-  opacity: 0;
-  padding: 0.25rem;
-  position: fixed;
-  right: -3rem;
-  text-decoration: none;
-  transition: all 0.1s ease-out;
-  -webkit-filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 1));
-  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1));
-  &--active {
-    right: calc(0.5rem + 0.75vw);
-    opacity: 1;
-    transition: all 0.5s ease-out;
-  }
+	bottom: calc(0.25rem + 0.75vw);
+	border: none;
+	background: transparent;
+	opacity: 0;
+	padding: 0.25rem;
+	position: fixed;
+	right: -3rem;
+	text-decoration: none;
+	transition: all 0.1s ease-out;
+	-webkit-filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 1));
+	filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1));
+	&--active {
+		right: calc(0.5rem + 0.75vw);
+		opacity: 1;
+		transition: all 0.5s ease-out;
+	}
 }
 
 .image {
-  margin-bottom: 0.5rem;
-  @media (min-width: $breakpoint) {
-    margin-bottom: 1.6em;
-  }
+	margin-bottom: 0.5rem;
+	@media (min-width: $breakpoint) {
+		margin-bottom: 1.6em;
+	}
 }
 
 .slideshow {
-  .image {
-    height: 0;
-    margin: 0;
-    opacity: 0.75;
+	.image {
+		height: 0;
+		margin: 0;
+		opacity: 0.75;
 
-    &--active {
-      height: auto;
-      max-height: calc(100vh - 3rem);
-      opacity: 1;
-      transition: opacity 0.25s ease-in;
-      width: auto;
-    }
-  }
+		&--active {
+			height: auto;
+			max-height: calc(100vh - 3rem);
+			opacity: 1;
+			transition: opacity 0.25s ease-in;
+			width: auto;
+		}
+	}
 }
 
-.highFive {
-  margin-top: 3em;
-  svg {
-    margin-left: 1em;
-    margin-top: 1em;
-    width: 4em;
-  }
-  &__button {
-    background: transparent;
-    border: none;
-    font-family: inherit;
-    font-size: 100%;
-    margin: 0;
-    padding: 0;
-    text-transform: none;
-    -webkit-appearance: button;
-  }
-  &--clicked {
-    opacity: 0;
-    transition: all 1s ease-out 2s;
-  }
+.clap {
+	height: 4em;
+	width: 4em;
+	&--footer {
+    margin: 2em auto 0;
+	}
+
+	&--sidebar {
+    margin-top: 2em;
+	}
 }

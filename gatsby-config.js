@@ -6,6 +6,7 @@ module.exports = {
     description: 'Personal photography',
   },
   plugins: [
+    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
