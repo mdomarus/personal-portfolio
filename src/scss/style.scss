@@ -152,9 +152,17 @@ a {
 	width: 4em;
 	&--footer {
     margin: 2em auto 0;
+    display: block !important;
+		@media (min-width: $breakpoint) {
+			display: none !important;
+		}
 	}
 
 	&--sidebar {
     margin-top: 2em;
+    display: none !important;
+		@media (min-width: $breakpoint) {
+			display: block !important;
+		}
 	}
 }

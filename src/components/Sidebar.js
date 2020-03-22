@@ -7,7 +7,7 @@ const Sidebar = () => (
     <h1><Link to="/">Michał Domarus</Link></h1>
     <h2>Travel</h2>
     <Links />
-    {window.innerWidth >= 800 && <applause-button class="clap clap--sidebar" color="black" />}
+    <applause-button class="clap clap--sidebar" color="black" />
   </div>
 );
 
