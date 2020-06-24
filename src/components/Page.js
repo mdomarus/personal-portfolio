@@ -4,7 +4,6 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Sidebar from './Sidebar';
 import '../scss/style.scss';
-import 'applause-button';
 
 const Page = ({ children }) => (
   <StaticQuery
@@ -37,7 +36,6 @@ const Page = ({ children }) => (
             <div className="content">
               {children}
             </div>
-            <applause-button class="clap clap--footer" color="black" />
           </div>
           <div className="copyright">
             {`©${year} Michał Domarus `}

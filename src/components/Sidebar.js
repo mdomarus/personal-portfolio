@@ -7,7 +7,6 @@ const Sidebar = () => (
     <h1><Link to="/">Michał Domarus</Link></h1>
     <h2>Travel</h2>
     <Links />
-    <applause-button class="clap clap--sidebar" color="black" />
   </div>
 );
 
