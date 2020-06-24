@@ -105,25 +105,6 @@ a {
 	}
 }
 
-.backToTop {
-	bottom: calc(0.25rem + 0.75vw);
-	border: none;
-	background: transparent;
-	opacity: 0;
-	padding: 0.25rem;
-	position: fixed;
-	right: -3rem;
-	text-decoration: none;
-	transition: all 0.1s ease-out;
-	-webkit-filter: drop-shadow(3px 3px 2px rgba(255, 255, 255, 1));
-	filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1));
-	&--active {
-		right: calc(0.5rem + 0.75vw);
-		opacity: 1;
-		transition: all 0.5s ease-out;
-	}
-}
-
 .image {
 	margin-bottom: 0.5rem;
 	@media (min-width: $breakpoint) {
@@ -133,36 +114,14 @@ a {
 
 .slideshow {
 	.image {
-		height: 0;
-		margin: 0;
-		opacity: 0.75;
-
+		height: auto;
+		max-height: calc(100vh - 3rem);
+		opacity: 0;
+		transition: opacity 0.25s ease-in;
+		width: auto;
 		&--active {
-			height: auto;
-			max-height: calc(100vh - 3rem);
 			opacity: 1;
 			transition: opacity 0.25s ease-in;
-			width: auto;
-		}
-	}
-}
-
-.clap {
-	height: 4em;
-	width: 4em;
-	&--footer {
-    margin: 2em auto 0;
-    display: block !important;
-		@media (min-width: $breakpoint) {
-			display: none !important;
-		}
-	}
-
-	&--sidebar {
-    margin-top: 2em;
-    display: none !important;
-		@media (min-width: $breakpoint) {
-			display: block !important;
 		}
 	}
 }

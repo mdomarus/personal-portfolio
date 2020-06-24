@@ -1,4 +1,4 @@
-const path = require('path');
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -6,26 +6,14 @@ module.exports = {
     description: 'Personal photography',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-132820524-1',
         respectDNT: true,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        useMozJpeg: false,
-        stripMetadata: true,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: path.join(__dirname, 'src', 'images'),
       },
     },
     {
@@ -45,9 +33,25 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-cloudinary',
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: 'image',
+        prefix: 'personal',
+        maxResults: 10000,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-cloudinary',
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        fluidMaxWidth: 2400,
+      },
+    },
   ],
 };

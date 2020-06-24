@@ -1,69 +1,48 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import useInterval from '../hooks/useInterval';
 import Page from '../components/Page';
 
-const Slider = ({ data }) => {
+const Slider = () => {
   const [slide, setSlide] = useState(0);
+  const [nextSlide, setNextSlide] = useState(1);
+  const data = useStaticQuery(graphql`
+  query MyQuery {
+  allCloudinaryAsset(filter: {fluid: {src: {regex: "/slideshow/"}}}) {
+    nodes {
+      fluid {
+        aspectRatio
+        src
+        srcSet
+        sizes
+      }
+    }
+  }
+}
+
+
+`);
+  const clImages = data.allCloudinaryAsset.nodes;
 
   const cycleImage = () => {
-    const imagesCount = data.images.edges.length - 1;
-    setSlide(slide === imagesCount ? 0 : slide + 1);
+    const imagesCount = clImages.length;
+    setSlide(slide === imagesCount - 1 ? 0 : slide + 1);
+    setNextSlide(nextSlide === imagesCount - 1 ? 0 : nextSlide + 1);
   };
 
   useInterval(
-    cycleImage, 2000,
+    cycleImage, 3000,
   );
 
   return (
     <Page>
       <div className="slideshow">
-        {data.images.edges.map((el, index) => {
-          const classes = index === slide
-            ? 'image image--active'
-            : 'image';
-          return (
-            <Img key={`${el.node.originalName}${index * 2}`} className={classes} fluid={el.node.childImageSharp.fluid} loading="eager" />
-          );
-        })}
+        <Img fluid={clImages[slide].fluid} className="image--active" />
+        <Img fluid={clImages[nextSlide].fluid} className="image" />
       </div>
     </Page>
   );
 };
 
 export default Slider;
-
-Slider.propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
-export const query = graphql`
-  query {
-    images: allFile(
-      filter: {
-        sourceInstanceName: { eq: "images" }
-        relativePath: { regex: "/slideshow/" }
-      }
-      # sort: { order: ASC, fields: [name] }
-    ) {
-      edges {
-        node {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 75) {
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-              originalImg
-              originalName
-            }
-          }
-        }
-      }
-    }
-  }
-`;

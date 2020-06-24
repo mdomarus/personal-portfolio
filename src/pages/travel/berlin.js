@@ -4,12 +4,12 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Page from '../../components/Page';
 
-const Gallery = ({ data: { images: { edges: images } } }) => (
+const Gallery = ({ data }) => (
   <Page>
     <h1>Berlin / Germany</h1>
-    {images.map(({ node: { childImageSharp: { fluid } } }) => (
+    {data.allCloudinaryAsset.nodes.map(({ fluid }) => (
       <Img
-        key={fluid.originalName}
+        key={fluid.src}
         className="image"
         fluid={fluid}
         lazyload
@@ -25,31 +25,17 @@ Gallery.propTypes = {
 export default Gallery;
 
 export const query = graphql`
-  query {
-    images: allFile(
-      filter: {
-        sourceInstanceName: { eq: "images" }
-        relativePath: { regex: "/berlin/" }
-      }
-      sort: { order: ASC, fields: [name] }
-    ) {
-      edges {
-        node {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 75) {
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-              originalImg
-              originalName
-            }
-          }
-        }
+  query BerlinQuery {
+  allCloudinaryAsset(filter: {fluid: {src: {regex: "/berlin/"}}}) {
+    nodes {
+      id
+      fluid {
+        aspectRatio
+        src
+        srcSet
+        sizes
       }
     }
-  },
-
+  }
+}
 `;
