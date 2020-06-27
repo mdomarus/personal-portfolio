@@ -6,7 +6,7 @@ import Page from '../../components/Page';
 
 const Gallery = ({ data }) => (
   <Page>
-    <h1>Sicily / Italy</h1>
+    <h1>Iceland</h1>
     {data.allCloudinaryAsset.nodes.map(({ fluid }) => (
       <Img
         key={fluid.src}
@@ -25,8 +25,8 @@ Gallery.propTypes = {
 export default Gallery;
 
 export const query = graphql`
-  query sicilyQuery {
-  allCloudinaryAsset(filter: {fluid: {src: {regex: "/sicily/"}}}) {
+  query icelandQuery {
+  allCloudinaryAsset(filter: {fluid: {src: {regex: "/iceland/"}}}) {
     nodes {
       id
       fluid {

@@ -7,6 +7,10 @@ const travel = [
     link: 'jordan',
   },
   {
+    title: 'Iceland',
+    link: 'iceland',
+  },
+  {
     title: 'Berlin',
     link: 'berlin',
   },
