@@ -39,7 +39,7 @@ const addTransformations = (resource, transformation, secure) => {
   return transformedURL;
 };
 
-const createCloudinaryNodes = (
+const createCloudinaryNodes = async (
   gatsby,
   options,
 ) => {
@@ -84,6 +84,6 @@ const createCloudinaryNodes = (
     },
   );
 
-  fetchBatch();
+  await fetchBatch();
 };
 exports.sourceNodes = createCloudinaryNodes;
