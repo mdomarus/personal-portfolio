@@ -1,0 +1,9 @@
+{
+  "name": "gatsby-source-cloudinary",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "cloudinary": "^1.22.0",
+    "lodash.snakecase": "^4.1.1"
+  }
+}

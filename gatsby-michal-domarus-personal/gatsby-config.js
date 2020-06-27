@@ -41,7 +41,7 @@ module.exports = {
         apiSecret: process.env.CLOUDINARY_API_SECRET,
         resourceType: 'image',
         prefix: 'personal',
-        maxResults: 10000,
+        maxResults: 500,
       },
     },
     {
