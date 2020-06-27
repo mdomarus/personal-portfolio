@@ -1,37 +1,29 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
+import Slick from 'react-slick';
 import Img from 'gatsby-image';
 import get from 'lodash/get';
-import useInterval from '../hooks/useInterval';
 import Page from '../components/Page';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Slider = ({ data }) => {
-  const [slide, setSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(1);
-
   const clImages = get(data, 'allCloudinaryAsset.nodes', []);
-  const imagesCount = clImages.length;
 
-  const cycleImage = () => {
-    setSlide(slide === imagesCount - 1 ? 0 : slide + 1);
-    setNextSlide(nextSlide === imagesCount - 1 ? 0 : nextSlide + 1);
+  const settings = {
+    autoplay: true,
+    infinite: true,
+    lazyLoad: false,
+    fade: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
-
-  useInterval(
-    cycleImage, 3000,
-  );
-
   return (
     <Page>
-      <div className="slideshow">
-        {imagesCount > 1
-        && (
-        <>
-          <Img fluid={clImages[slide].fluid} className="image--active" />
-          <Img fluid={clImages[nextSlide].fluid} className="image" />
-        </>
-        )}
-      </div>
+      <Slick {...settings}>
+        {clImages.map(({ fluid }) => <Img fluid={fluid} key={fluid} />)}
+      </Slick>
     </Page>
   );
 };
