@@ -18,18 +18,6 @@ const travel = [
     title: 'Paris',
     link: 'paris',
   },
-  //   {
-  //     title: 'Bali',
-  //     link: 'bali',
-  //   },
-  //   {
-  //     title: 'Japan',
-  //     link: 'japan',
-  //   },
-  //   {
-  //     title: 'Vietnam',
-  //     link: 'vietnam',
-  //   },
   {
     title: 'Azores',
     link: 'azores',

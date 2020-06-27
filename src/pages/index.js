@@ -1,32 +1,18 @@
 import React, { useState } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import get from 'lodash/get';
 import useInterval from '../hooks/useInterval';
 import Page from '../components/Page';
 
-const Slider = () => {
+const Slider = ({ data }) => {
   const [slide, setSlide] = useState(0);
   const [nextSlide, setNextSlide] = useState(1);
-  const data = useStaticQuery(graphql`
-  query MyQuery {
-  allCloudinaryAsset(filter: {fluid: {src: {regex: "/slideshow/"}}}) {
-    nodes {
-      fluid {
-        aspectRatio
-        src
-        srcSet
-        sizes
-      }
-    }
-  }
-}
 
-
-`);
-  const clImages = data.allCloudinaryAsset.nodes;
+  const clImages = get(data, 'allCloudinaryAsset.nodes', []);
+  const imagesCount = clImages.length;
 
   const cycleImage = () => {
-    const imagesCount = clImages.length;
     setSlide(slide === imagesCount - 1 ? 0 : slide + 1);
     setNextSlide(nextSlide === imagesCount - 1 ? 0 : nextSlide + 1);
   };
@@ -38,11 +24,32 @@ const Slider = () => {
   return (
     <Page>
       <div className="slideshow">
-        <Img fluid={clImages[slide].fluid} className="image--active" />
-        <Img fluid={clImages[nextSlide].fluid} className="image" />
+        {imagesCount > 1
+        && (
+        <>
+          <Img fluid={clImages[slide].fluid} className="image--active" />
+          <Img fluid={clImages[nextSlide].fluid} className="image" />
+        </>
+        )}
       </div>
     </Page>
   );
 };
 
 export default Slider;
+
+export const query = graphql`
+  query slideshowQuery {
+  allCloudinaryAsset(filter: {fluid: {src: {regex: "/home/"}}}) {
+    nodes {
+      id
+      fluid {
+        aspectRatio
+        src
+        srcSet
+        sizes
+      }
+    }
+  }
+}
+`;
