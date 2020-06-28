@@ -15,6 +15,10 @@ const travel = [
     link: 'berlin',
   },
   {
+    title: 'Lake District',
+    link: 'lake-district',
+  },
+  {
     title: 'Paris',
     link: 'paris',
   },
