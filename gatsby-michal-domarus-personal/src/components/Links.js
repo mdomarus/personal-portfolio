@@ -23,6 +23,10 @@ const travel = [
     link: 'paris',
   },
   {
+    title: 'Israel',
+    link: 'israel',
+  },
+  {
     title: 'Azores',
     link: 'azores',
   },
