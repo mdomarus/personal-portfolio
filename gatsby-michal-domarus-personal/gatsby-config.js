@@ -17,20 +17,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-fonts',
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          {
-            family: 'Roboto Condensed',
-            subsets: ['latin-ext'],
-            variants: ['400', '700'],
-          },
-          {
-            family: 'Montserrat',
-            subsets: ['latin-ext'],
-            variants: ['400', '700'],
-          },
-        ],
+        google: {
+          families: ['Roboto Condensed:400,700:latin-ext', 'Montserrat:400,700:latin-ext']
+        }
       },
     },
     {
