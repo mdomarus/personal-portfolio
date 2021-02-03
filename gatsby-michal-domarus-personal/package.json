@@ -23,7 +23,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-cloudinary": "1.0.0",
     "gatsby-source-filesystem": "^2.11.0",
-    "gatsby-transformer-cloudinary": "1.0.1",
+    "gatsby-transformer-cloudinary": "0.0.1",
     "google-fonts-plugin": "5.0.2",
     "lodash": "^4.17.20",
     "node-sass": "^5.0.0",

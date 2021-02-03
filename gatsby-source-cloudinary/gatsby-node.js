@@ -35,8 +35,7 @@ const addTransformations = (resource, transformation, secure) => {
   const splitURL = secure ? resource.secure_url.split('/') : resource.url.split('/');
   splitURL.splice(6, 0, transformation);
 
-  const transformedURL = splitURL.join('/');
-  return transformedURL;
+  return splitURL.join('/');
 };
 
 const createCloudinaryNodes = async (
