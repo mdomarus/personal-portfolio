@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 // todo: for fluid images when original width and height is not set, use width and height of image as is and make full width
 // todo: investigate graphQL query overrides for width and height and abstract control to user through gql query
 

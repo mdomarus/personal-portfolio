@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const fs = require('fs');
 const {
   getFixedImageObject,
@@ -60,11 +61,7 @@ exports.createResolvers = ({ createResolvers }) => {
           {
             public_id, version, cloudName, originalHeight, originalWidth,
           },
-          {
-            chained,
-            transformations,
-            width,
-          },
+          { chained, transformations, width },
         ) => getFixedImageObject({
           chained,
           cloudName,
@@ -87,11 +84,7 @@ exports.createResolvers = ({ createResolvers }) => {
             public_id,
             version,
           },
-          {
-            chained,
-            maxWidth,
-            transformations,
-          },
+          { chained, maxWidth, transformations },
         ) => getFluidImageObject({
           breakpoints,
           chained,
@@ -110,12 +103,7 @@ exports.createResolvers = ({ createResolvers }) => {
   createResolvers(resolvers);
 };
 
-exports.onCreateNode = async (
-  {
-    node, actions, createNodeId,
-  },
-  options,
-) => {
+exports.onCreateNode = async ({ node, actions, createNodeId }, options) => {
   if (node.format !== 'jpg') return;
 
   const imageNode = {
