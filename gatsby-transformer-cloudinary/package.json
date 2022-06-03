@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "dependencies": {
-    "cloudinary": "^1.25.0",
-    "gatsby": "^3.0.3"
+    "cloudinary": "^1.30.0",
+    "gatsby": "^4.15.2"
   }
 }
