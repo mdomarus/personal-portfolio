@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Slick from 'react-slick';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import get from 'lodash/get';
 import Page from '../components/Page';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Slider = ({ data }) => {
-  const clImages = get(data, 'allCloudinaryAsset.nodes', []);
+  const clImages = get(data, 'allImageSharp.nodes', []);
 
   const settings = {
     autoplay: true,
@@ -22,7 +22,7 @@ const Slider = ({ data }) => {
   return (
     <Page>
       <Slick {...settings}>
-        {clImages.map(({ fluid }) => <Img fluid={fluid} key={fluid} />)}
+        {clImages.map(({ fluid }) => <GatsbyImage fluid={fluid} key={fluid} />)}
       </Slick>
     </Page>
   );
@@ -32,15 +32,12 @@ export default Slider;
 
 export const query = graphql`
   query slideshowQuery {
-  allCloudinaryAsset(filter: {fluid: {src: {regex: "/home/"}}}) {
+  allCloudinaryMedia(filter: {secure_url: {regex: "/home/"}}) {
     nodes {
       id
-      fluid {
-        aspectRatio
-        src
-        srcSet
-        sizes
-      }
+      secure_url
+      width
+      height
     }
   }
 }

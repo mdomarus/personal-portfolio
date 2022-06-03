@@ -59,7 +59,7 @@ const createCloudinaryNodes = async (gatsby, options) => {
   const resourceOptions = getResourceOptions(options);
 
   const fetchBatch = () => cloudinary.api.resources(resourceOptions, (error, result) => {
-    const hasResources = result && result.resources && result.resources.length;
+    const hasResources = result?.resources?.length;
 
     if (error) {
       console.error(error);
@@ -79,11 +79,49 @@ const createCloudinaryNodes = async (gatsby, options) => {
     }
 
     result.resources.forEach((resource) => {
-      const transformations = 'q_auto,f_auto';
-      resource.url = addTransformations(resource, transformations);
-      resource.secure_url = addTransformations(
-        resource,
+      const transformations = 'q_auto,f_auto,c_scale,w_auto:100:2400';
+      const transformationsMedium = 'q_auto,f_auto,c_scale,w_auto:100:1200';
+      const transformationsSmall = 'q_auto,f_auto,c_scale,w_auto:100:600';
+      const transformationsWebp = 'q_auto,f_webp,c_scale,w_auto:100:2400';
+      const transformationsMediumWebp = 'q_auto,f_webp,c_scale,w_auto:100:1200';
+      const transformationsSmallWebp = 'q_auto,f_webp,c_scale,w_auto:100:600';
+
+      resource.responsive = { jpg: {}, webp: {} };
+
+      const originalResource = { ...resource };
+
+      resource.responsive.jpg.normal = addTransformations(
+        originalResource,
         transformations,
+        true,
+      );
+
+      resource.responsive.jpg.medium = addTransformations(
+        originalResource,
+        transformationsMedium,
+        true,
+      );
+
+      resource.responsive.jpg.small = addTransformations(
+        originalResource,
+        transformationsSmall,
+        true,
+      );
+      resource.responsive.webp.normal = addTransformations(
+        originalResource,
+        transformationsWebp,
+        true,
+      );
+
+      resource.responsive.webp.medium = addTransformations(
+        originalResource,
+        transformationsMediumWebp,
+        true,
+      );
+
+      resource.responsive.webp.small = addTransformations(
+        originalResource,
+        transformationsSmallWebp,
         true,
       );
 
