@@ -1,14 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Slick from 'react-slick';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import get from 'lodash/get';
 import Page from '../components/Page';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Slider = ({ data }) => {
-  const clImages = get(data, 'allImageSharp.nodes', []);
 
   const settings = {
     autoplay: true,
@@ -22,7 +19,14 @@ const Slider = ({ data }) => {
   return (
     <Page>
       <Slick {...settings}>
-        {clImages.map(({ fluid }) => <GatsbyImage fluid={fluid} key={fluid} />)}
+        {data?.allCloudinaryMedia?.nodes.map((node, index) => (
+          <picture key={node.id}>
+            <source srcSet={`${node.responsive.webp.normal}`} type="image/webp" />
+            <source srcSet={node.responsive.jpg.normal} media="(min-width: 1200px)" />
+            <source srcSet={`${node.responsive.jpg.medium} 1x, ${node.responsive.jpg.normal} 2x`} media="(min-width: 600px)" />
+            <img src={node.responsive.jpg.small} loading={index < 5 ? 'eager' : 'lazy'} />
+          </picture>
+        ))}
       </Slick>
     </Page>
   );
@@ -38,6 +42,18 @@ export const query = graphql`
       secure_url
       width
       height
+      responsive {
+        jpg {
+          normal
+          medium
+          small
+        }
+        webp {
+          normal
+          medium
+          small
+        }
+      }
     }
   }
 }
