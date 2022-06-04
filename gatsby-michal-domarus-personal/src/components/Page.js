@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Sidebar from './Sidebar';
 import '../scss/style.scss';
 
-const Page = ({ children }) => (
+const Page = ({ children, title = '' }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -20,7 +20,7 @@ const Page = ({ children }) => (
     render={(data) => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={title ? `${data.site.siteMetadata.title} - ${title}` : data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: 'photography, street photography, travel photography' },
@@ -31,6 +31,7 @@ const Page = ({ children }) => (
         <div className="page">
           <Sidebar />
           <div className="content">
+            {title && <h2>{title}</h2>}
             {children}
           </div>
         </div>
@@ -58,7 +59,3 @@ const Page = ({ children }) => (
 );
 
 export default Page;
-
-Page.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};

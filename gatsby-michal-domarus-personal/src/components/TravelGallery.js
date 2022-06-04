@@ -1,8 +1,7 @@
 import React from 'react';
 
-const TravelGallery = ({ title, data }) => (
+const TravelGallery = ({ data }) => (
   <>
-    <h1>{title}</h1>
     {
       data.allCloudinaryMedia.nodes.map((node, index) => (
         <img

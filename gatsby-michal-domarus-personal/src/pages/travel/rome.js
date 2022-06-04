@@ -3,8 +3,8 @@ import { graphql } from 'gatsby';
 import Page from '../../components/Page';
 import TravelGallery from '../../components/TravelGallery';
 
-const Gallery = ({ data }) => <Page>
-  <TravelGallery data={data} title={"Rome / Italy"} />
+const Gallery = ({ data }) => <Page title={"Rome / Italy"}>
+  <TravelGallery data={data} />
 </Page>;
 
 export default Gallery;

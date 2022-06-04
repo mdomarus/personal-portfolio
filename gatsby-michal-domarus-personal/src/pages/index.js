@@ -19,7 +19,7 @@ const Slider = ({ data }) => {
   return (
     <Page>
       <Slick {...settings}>
-        {data?.allCloudinaryMedia?.nodes.map((node, index) => (
+        {data?.allCloudinaryMedia?.nodes.map((node) => (
           <img
             key={node.id}
             srcSet={`
@@ -27,7 +27,11 @@ const Slider = ({ data }) => {
             ${node.responsive.medium} 1200w,
             ${node.responsive.normal} 2400w
             `}
-            src={node.responsive.small} sizes={'(max-width: 799px) 100vw, 1400px'} className="image"
+            src={node.responsive.small}
+            sizes={'(max-width: 799px) 100vw, 1400px'}
+            className="image"
+            width={node.width}
+            height={node.height}
           />
         ))}
       </Slick>
