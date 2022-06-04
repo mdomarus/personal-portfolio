@@ -8,14 +8,13 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    'gatsby-plugin-typescript',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-132820524-1',
-        respectDNT: true,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-google-analytics',
+    //   options: {
+    //     trackingId: 'UA-132820524-1',
+    //     respectDNT: true,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
