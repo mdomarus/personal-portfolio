@@ -27,7 +27,7 @@ const Slider = ({ data }) => {
             ${node.responsive.medium} 1200w,
             ${node.responsive.normal} 2400w
             `}
-            src={node.responsive.small} loading={index < 5 ? 'eager' : 'lazy'} sizes={'(max-width: 799px) 100vw, 1400px'} className="image"
+            src={node.responsive.small} sizes={'(max-width: 799px) 100vw, 1400px'} className="image"
           />
         ))}
       </Slick>
