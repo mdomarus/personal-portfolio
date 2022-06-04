@@ -4,39 +4,39 @@ import { Link } from 'gatsby';
 const travel = [
   {
     title: 'Jordan',
-    link: 'jordan',
+    link: 'jordan/',
   },
   {
     title: 'Iceland',
-    link: 'iceland',
+    link: 'iceland/',
   },
   {
     title: 'Berlin',
-    link: 'berlin',
+    link: 'berlin/',
   },
   {
     title: 'Lake District',
-    link: 'lake-district',
+    link: 'lake-district/',
   },
   {
     title: 'Paris',
-    link: 'paris',
+    link: 'paris/',
   },
   {
     title: 'Israel',
-    link: 'israel',
+    link: 'israel/',
   },
   {
     title: 'Azores',
-    link: 'azores',
+    link: 'azores/',
   },
   {
     title: 'Sicily',
-    link: 'sicily',
+    link: 'sicily/',
   },
   {
     title: 'Rome',
-    link: 'rome',
+    link: 'rome/',
   },
 ];
 

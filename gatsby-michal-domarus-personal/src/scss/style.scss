@@ -91,11 +91,6 @@ a {
 			margin-top: 1rem;
 		}
 	}
-
-	img {
-		max-width: 100%;
-		width: auto;
-	}
 }
 
 .copyright {
@@ -111,6 +106,9 @@ a {
 .image {
 	display: block;
 	margin-bottom: 0.5rem;
+	max-width: 100%;
+	width: auto;
+	height: auto;
 	@media (min-width: $breakpoint) {
 		margin-bottom: 1.6rem;
 	}
