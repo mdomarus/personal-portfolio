@@ -3,7 +3,7 @@ $breakpoint: "800px";
 body {
 	color: #333;
 	font-family: "Montserrat", sans-serif;
-	font-size: 14px;
+	font-size: calc(14rem / 16);
 	margin: 0;
 	padding: 0.5rem;
 	box-sizing: border-box;
@@ -17,7 +17,7 @@ h2 {
 }
 
 h1 {
-	font-size: 150%;
+	font-size: 1.5rem;
 	a {
 		background: none;
 		text-decoration: none;
@@ -25,7 +25,7 @@ h1 {
 }
 
 h2 {
-	font-size: 120%;
+	font-size: 1.2rem;
 }
 
 ul {
@@ -49,8 +49,8 @@ a {
 
 	@media (min-width: $breakpoint) {
 		float: left;
-		max-width: 200px;
-		min-width: 200px;
+		// max-width: 200px;
+		// min-width: 200px;
 		padding: 1em;
 		position: -webkit-sticky;
 		position: sticky;
@@ -82,13 +82,13 @@ a {
 	overflow: hidden;
 
 	@media (min-width: $breakpoint) {
-		padding: 1em;
+		padding: 1rem;
 	}
 
 	h1 {
 		margin-top: 0;
 		@media (min-width: $breakpoint) {
-			margin-top: 1em;
+			margin-top: 1rem;
 		}
 	}
 
@@ -109,12 +109,10 @@ a {
 }
 
 .image {
+	display: block;
 	margin-bottom: 0.5rem;
 	@media (min-width: $breakpoint) {
-		margin-bottom: 1.6em;
-	}
-	img {
-		position: relative;
+		margin-bottom: 1.6rem;
 	}
 }
 

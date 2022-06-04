@@ -79,49 +79,25 @@ const createCloudinaryNodes = async (gatsby, options) => {
     }
 
     result.resources.forEach((resource) => {
-      const transformations = 'q_auto,f_auto,c_scale,w_auto:100:2400';
-      const transformationsMedium = 'q_auto,f_auto,c_scale,w_auto:100:1200';
-      const transformationsSmall = 'q_auto,f_auto,c_scale,w_auto:100:600';
-      const transformationsWebp = 'q_auto,f_webp,c_scale,w_auto:100:2400';
-      const transformationsMediumWebp = 'q_auto,f_webp,c_scale,w_auto:100:1200';
-      const transformationsSmallWebp = 'q_auto,f_webp,c_scale,w_auto:100:600';
-
-      resource.responsive = { jpg: {}, webp: {} };
+      resource.responsive = { };
 
       const originalResource = { ...resource };
 
-      resource.responsive.jpg.normal = addTransformations(
+      resource.responsive.normal = addTransformations(
         originalResource,
-        transformations,
+        'q_auto,f_auto,c_scale,w_auto:100:2400',
         true,
       );
 
-      resource.responsive.jpg.medium = addTransformations(
+      resource.responsive.medium = addTransformations(
         originalResource,
-        transformationsMedium,
+        'q_auto,f_auto,c_scale,w_auto:100:1200',
         true,
       );
 
-      resource.responsive.jpg.small = addTransformations(
+      resource.responsive.small = addTransformations(
         originalResource,
-        transformationsSmall,
-        true,
-      );
-      resource.responsive.webp.normal = addTransformations(
-        originalResource,
-        transformationsWebp,
-        true,
-      );
-
-      resource.responsive.webp.medium = addTransformations(
-        originalResource,
-        transformationsMediumWebp,
-        true,
-      );
-
-      resource.responsive.webp.small = addTransformations(
-        originalResource,
-        transformationsSmallWebp,
+        'q_auto,f_auto,c_scale,w_auto:100:600',
         true,
       );
 

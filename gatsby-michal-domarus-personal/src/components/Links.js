@@ -40,12 +40,8 @@ const travel = [
   },
 ];
 
-export default class Links extends Component {
-  render() {
-    return (
-      <ul className="links">
-        {travel.map(({ link, title }) => <li key={link}><Link to={`/travel/${link}`}>{title}</Link></li>)}
-      </ul>
-    );
-  }
-}
+const Links = () => <ul className="links">
+  {travel.map(({ link, title }) => <li key={link}><Link to={`/travel/${link}`}>{title}</Link></li>)}
+</ul>
+
+export default Links;

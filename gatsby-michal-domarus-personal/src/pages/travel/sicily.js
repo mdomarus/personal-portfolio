@@ -15,16 +15,9 @@ export const query = graphql`
     nodes {
       id
       responsive {
-        jpg {
           normal
           medium
           small
-        }
-        webp {
-          normal
-          medium
-          small
-        }
       }
     }
   }

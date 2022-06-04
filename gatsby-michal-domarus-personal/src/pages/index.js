@@ -20,12 +20,15 @@ const Slider = ({ data }) => {
     <Page>
       <Slick {...settings}>
         {data?.allCloudinaryMedia?.nodes.map((node, index) => (
-          <picture key={node.id}>
-            <source srcSet={`${node.responsive.webp.normal}`} type="image/webp" />
-            <source srcSet={node.responsive.jpg.normal} media="(min-width: 1200px)" />
-            <source srcSet={`${node.responsive.jpg.medium} 1x, ${node.responsive.jpg.normal} 2x`} media="(min-width: 600px)" />
-            <img src={node.responsive.jpg.small} loading={index < 5 ? 'eager' : 'lazy'} />
-          </picture>
+          <img
+            key={node.id}
+            srcSet={`
+            ${node.responsive.small} 600w,
+            ${node.responsive.medium} 1200w,
+            ${node.responsive.normal} 2400w
+            `}
+            src={node.responsive.small} loading={index < 5 ? 'eager' : 'lazy'} sizes={'(max-width: 799px) 100vw, 1400px'} className="image"
+          />
         ))}
       </Slick>
     </Page>
@@ -43,16 +46,9 @@ export const query = graphql`
       width
       height
       responsive {
-        jpg {
           normal
           medium
           small
-        }
-        webp {
-          normal
-          medium
-          small
-        }
       }
     }
   }
