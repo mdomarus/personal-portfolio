@@ -38,6 +38,10 @@ const travel = [
     title: 'Rome',
     link: 'rome/',
   },
+  {
+    title: 'Argentina',
+    link: 'argentina/',
+  },
 ];
 
 const Links = () => <ul className="links">
