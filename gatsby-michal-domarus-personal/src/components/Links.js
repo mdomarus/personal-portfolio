@@ -39,6 +39,10 @@ const travel = [
     link: 'rome/',
   },
   {
+    title: 'Mexico',
+    link: 'mexico/',
+  },
+  {
     title: 'Argentina',
     link: 'argentina/',
   },
