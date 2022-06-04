@@ -14,6 +14,8 @@ export const query = graphql`
   allCloudinaryMedia(filter: {secure_url: {regex: "/iceland/"}}) {
     nodes {
       id
+      width
+      height
       responsive {
           normal
           medium

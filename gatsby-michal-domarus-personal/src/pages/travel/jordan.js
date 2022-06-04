@@ -14,6 +14,8 @@ export const query = graphql`
   allCloudinaryMedia(filter: {secure_url: {regex: "/jordan/"}}) {
     nodes {
       id
+      width
+      height
       responsive {
           normal
           medium
