@@ -3,11 +3,11 @@ import { Link } from 'gatsby';
 import Links from './Links';
 
 const Sidebar = () => (
-  <div className="sidebar">
+  <nav>
     <h1><Link to="/">Michał Domarus</Link></h1>
     <h2>Travel</h2>
     <Links />
-  </div>
+  </nav>
 );
 
 export default Sidebar;

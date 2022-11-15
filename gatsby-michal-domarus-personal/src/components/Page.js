@@ -30,12 +30,12 @@ const Page = ({ children, title = '' }) => (
         </Helmet>
         <div className="page">
           <Sidebar />
-          <div className="content">
+          <article>
             {title && <h2>{title}</h2>}
             {children}
-          </div>
+          </article>
         </div>
-        <div className="copyright">
+        <footer>
           {`©${new Date().getFullYear()} Michał Domarus `}
           <a href="https://www.instagram.com/mdomarus/" target="_blank" rel="nofollow noopener noreferrer" aria-label="Check my Instagram profile">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="instagram">
@@ -52,7 +52,7 @@ const Page = ({ children, title = '' }) => (
               />
             </svg>
           </a>
-        </div>
+        </footer>
       </>
     )}
   />
