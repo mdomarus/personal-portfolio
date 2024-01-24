@@ -5,6 +5,13 @@ import Page from '../components/Page';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+export const Head = ({ location, params, data, pageContext }) => (
+  <>
+    <title>{data.site.siteMetadata.title}</title>
+    <meta name="description" content={data.site.siteMetadata.description} />
+  </>
+)
+
 const Slider = ({ data }) => {
 
   const settings = {
