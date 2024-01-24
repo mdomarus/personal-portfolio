@@ -1,9 +1,14 @@
-import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Sidebar from './Sidebar';
 import '../scss/style.scss';
+
+export const Head = ({ location, params, data, pageContext }) => (
+  <>
+    <title>{data.site.siteMetadata.title}</title>
+    <meta name="description" content={data.site.siteMetadata.description} />
+  </>
+)
 
 const Page = ({ children, title = '' }) => (
   <StaticQuery
@@ -17,17 +22,8 @@ const Page = ({ children, title = '' }) => (
         }
       }
     `}
-    render={(data) => (
+    render={() => (
       <>
-        <Helmet
-          title={title ? `${data.site.siteMetadata.title} - ${title}` : data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: data.site.siteMetadata.description },
-            { name: 'keywords', content: 'photography, street photography, travel photography' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
         <div className="page">
           <Sidebar />
           <article>

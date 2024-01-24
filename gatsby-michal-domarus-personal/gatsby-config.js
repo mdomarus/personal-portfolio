@@ -6,15 +6,7 @@ module.exports = {
     description: 'Personal photography',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    // {
-    //   resolve: 'gatsby-plugin-google-analytics',
-    //   options: {
-    //     trackingId: 'UA-132820524-1',
-    //     respectDNT: true,
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
