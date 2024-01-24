@@ -114,4 +114,5 @@ const createCloudinaryNodes = async (gatsby, options) => {
 
   await fetchBatch();
 };
+
 exports.sourceNodes = createCloudinaryNodes;

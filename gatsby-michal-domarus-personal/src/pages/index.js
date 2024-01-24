@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 export const Head = ({ location, params, data, pageContext }) => (
   <>
     <title>{data.site?.siteMetadata?.title}</title>
-    <meta name="description" content={data.site.siteMetadata.description} />
+    <meta name="description" content={data.site?.siteMetadata?.description} />
     <meta name="pages-index" />
   </>
 )
