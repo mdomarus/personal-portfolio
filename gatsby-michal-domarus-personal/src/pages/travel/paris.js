@@ -5,8 +5,8 @@ import TravelGallery from '../../components/TravelGallery';
 
 export const Head = ({ location, params, data, pageContext }) => (
   <>
-    <title>{data.site.siteMetadata.title}</title>
-    <meta name="description" content={data.site.siteMetadata.description} />
+    <title>{data.site?.siteMetadata?.title}</title>
+    <meta name="description" content={data.site?.siteMetadata?.description} />
     <meta name="paris" />
   </>
 )

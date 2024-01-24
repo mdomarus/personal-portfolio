@@ -7,13 +7,13 @@ import 'slick-carousel/slick/slick-theme.css';
 
 export const Head = ({ location, params, data, pageContext }) => (
   <>
-    <title>{data.site.siteMetadata.title}</title>
+    <title>{data.site?.siteMetadata?.title}</title>
     <meta name="description" content={data.site.siteMetadata.description} />
+    <meta name="pages-index" />
   </>
 )
 
 const Slider = ({ data }) => {
-
   const settings = {
     autoplay: true,
     infinite: true,
@@ -23,6 +23,7 @@ const Slider = ({ data }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
   return (
     <Page>
       <Slick {...settings}>
