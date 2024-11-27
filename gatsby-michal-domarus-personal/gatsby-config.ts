@@ -1,6 +1,8 @@
+import type { GatsbyConfig } from "gatsby"
+
 require('dotenv').config();
 
-module.exports = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: 'Michał Domarus',
     description: 'Personal photography',
@@ -28,3 +30,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;

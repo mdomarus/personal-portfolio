@@ -11,5 +11,6 @@
     "gatsby-michal-domarus-personal",
     "gatsby-source-cloudinary",
     "gatsby-transformer-cloudinary"
-  ]
+  ],
+  "dependencies": {}
 }
