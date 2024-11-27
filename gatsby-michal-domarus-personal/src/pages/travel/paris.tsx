@@ -1,9 +1,9 @@
-import React from 'react';
 import { graphql } from 'gatsby';
+import React from 'react';
 import Page from '../../components/Page';
 import TravelGallery from '../../components/TravelGallery';
 
-export const Head = ({ location, params, data, pageContext }) => (
+export const Head = ({ data }) => (
   <>
     <title>{data.site?.siteMetadata?.title}</title>
     <meta name="description" content={data.site?.siteMetadata?.description} />

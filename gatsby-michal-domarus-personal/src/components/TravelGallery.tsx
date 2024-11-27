@@ -15,6 +15,7 @@ const TravelGallery = ({ data }) => (
           className="image"
           width={node.width}
           height={node.height}
+          alt=""
         />
       ))
     }

@@ -48,8 +48,8 @@ const travel = [
   },
 ];
 
-const Links = () => <menu>
+const Links = () => (<menu>
   {travel.map(({ link, title }) => <li key={link}><Link to={`/travel/${link}`}>{title}</Link></li>)}
-</menu>
+</menu>);
 
 export default Links;

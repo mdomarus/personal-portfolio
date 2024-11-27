@@ -18,6 +18,7 @@ h2 {
 
 h1 {
 	font-size: 1.5rem;
+
 	a {
 		background: none;
 		text-decoration: none;
@@ -43,6 +44,7 @@ menu {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+
 	@media (min-width: $breakpoint) {
 		flex-direction: column;
 	}
@@ -87,6 +89,7 @@ article {
 
 	h1 {
 		margin-top: 0;
+
 		@media (min-width: $breakpoint) {
 			margin-top: 1rem;
 		}
@@ -109,6 +112,7 @@ footer {
 	max-width: 100%;
 	width: auto;
 	height: auto;
+
 	@media (min-width: $breakpoint) {
 		margin-bottom: 1.6rem;
 	}
@@ -121,6 +125,7 @@ footer {
 		opacity: 0;
 		transition: opacity 0.25s ease-in;
 		width: auto;
+
 		&--active {
 			opacity: 1;
 			transition: opacity 0.25s ease-in;

@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Sidebar from './Sidebar';
 import '../scss/style.scss';
 
-export const Head = ({ location, params, data, pageContext }) => (
+export const Head = ({ data }) => (
   <>
     <title>{data.site.siteMetadata.title}</title>
     <meta name="description" content={data.site.siteMetadata.description} />
   </>
 )
 
-const Page = ({ children, title = '' }) => (
+const Page = ({ children, title = '' }: {children: ReactNode; title?: string;}) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
