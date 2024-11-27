@@ -11,7 +11,7 @@ const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={"Argenti
 export default Gallery;
 
 export const query = graphql`
-  query ArgentinaQuery {
+  query {
   allCloudinaryMedia(filter: {secure_url: {regex: "/argentina2022/"}}) {
     nodes {
       id

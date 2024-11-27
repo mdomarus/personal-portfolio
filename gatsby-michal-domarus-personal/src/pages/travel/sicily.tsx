@@ -11,7 +11,7 @@ const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={"Sicily 
 export default Gallery;
 
 export const query = graphql`
-  query sicilyQuery {
+  query {
   allCloudinaryMedia(filter: {secure_url: {regex: "/sicily/"}}) {
     nodes {
       id

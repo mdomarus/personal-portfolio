@@ -4,25 +4,15 @@ export interface Node {
     width: number;
     height: number;
     responsive: {
-      normal: string;
-      medium: string;
-      small: string;
+        normal: string;
+        medium: string;
+        small: string;
     }
 }
 
-export interface PageDataProps {
-    site: {
-      siteMetadata: {
-        title: string;
-        description: string;
-      }
-    }
-  }
-  
 
 export interface GalleryDataProps {
     allCloudinaryMedia: {
-      nodes: Node[]
+        nodes: Node[]
     }
-  }
-  
+}

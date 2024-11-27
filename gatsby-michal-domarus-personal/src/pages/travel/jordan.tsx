@@ -11,7 +11,7 @@ const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={"Jordan"
 export default Gallery;
 
 export const query = graphql`
-  query jordanQuery {
+  query {
   allCloudinaryMedia(filter: {secure_url: {regex: "/jordan/"}}) {
     nodes {
       id

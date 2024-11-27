@@ -11,7 +11,7 @@ const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={"Lake Di
 export default Gallery;
 
 export const query = graphql`
-  query LakeQuery {
+  query {
   allCloudinaryMedia(filter: {secure_url: {regex: "/lake-district/"}}) {
     nodes {
       id

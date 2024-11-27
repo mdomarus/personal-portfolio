@@ -11,7 +11,7 @@ const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={"Azores 
 export default Gallery;
 
 export const query = graphql`
-  query AzoresQuery {
+  query {
   allCloudinaryMedia(filter: {secure_url: {regex: "/azores/"}}) {
     nodes {
       id

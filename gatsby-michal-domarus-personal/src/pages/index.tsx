@@ -3,17 +3,8 @@ import React from 'react';
 import Slick, { Settings } from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
-import { GalleryDataProps, PageDataProps } from '../../types';
+import { GalleryDataProps } from '../../types';
 import Page from '../components/Page';
-
-
-export const Head = ({ data }: PageProps<PageDataProps>) => (
-  <>
-    <title>{data.site?.siteMetadata?.title}</title>
-    <meta name="description" content={data.site?.siteMetadata?.description} />
-    <meta name="pages-index" />
-  </>
-)
 
 const Slider = ({ data }: PageProps<GalleryDataProps>) => {
   const settings: Settings = {

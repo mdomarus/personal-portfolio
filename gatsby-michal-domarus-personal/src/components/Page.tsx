@@ -1,30 +1,12 @@
-import { PageProps, StaticQuery, graphql } from 'gatsby';
 import React, { ReactNode } from 'react';
-import { PageDataProps } from '../../types';
 import '../scss/style.scss';
+import Head from './Head';
 import Sidebar from './Sidebar';
 
-export const Head = ({ data }: PageProps<PageDataProps>) => (
-  <>
-    <title>{data.site.siteMetadata.title}</title>
-    <meta name="description" content={data.site.siteMetadata.description} />
-  </>
-)
-
-const Page = ({ children, title = '' }: {children: ReactNode; title?: string;}) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title,
-            description
-          }
-        }
-      }
-    `}
-    render={() => (
+const Page = ({ children, title = '' }: {children: ReactNode; title?: string;}) => {
+  return (
       <>
+        <Head pageTitle={title} />
         <div className="page">
           <Sidebar />
           <article>
@@ -51,8 +33,7 @@ const Page = ({ children, title = '' }: {children: ReactNode; title?: string;}) 
           </a>
         </footer>
       </>
-    )}
-  />
-);
+    )
+  }
 
 export default Page;
