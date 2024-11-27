@@ -1,7 +1,6 @@
-import type { GatsbyConfig } from "gatsby"
 import 'dotenv/config'
 
-const config: GatsbyConfig = {
+const config = {
   siteMetadata: {
     title: 'Michał Domarus',
     description: 'Personal photography',
