@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSiteMetadata } from "../hooks/use-site-metadata";
 
-const Head = ({ pageTitle = 'Personal Photography' }: { pageTitle?: string }) => {
+const SEO = ({ pageTitle = 'Personal Photography' }: { pageTitle?: string }) => {
     const { title, description } = useSiteMetadata();
 
     return (
@@ -12,4 +12,4 @@ const Head = ({ pageTitle = 'Personal Photography' }: { pageTitle?: string }) =>
     )
 }
 
-export default Head;
+export default SEO;

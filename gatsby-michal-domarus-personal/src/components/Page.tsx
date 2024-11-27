@@ -1,12 +1,10 @@
 import React, { ReactNode } from 'react';
 import '../scss/style.scss';
-import Head from './Head';
 import Sidebar from './Sidebar';
 
 const Page = ({ children, title }: {children: ReactNode; title?: string;}) => {
   return (
       <>
-        <Head pageTitle={title} />
         <div className="page">
           <Sidebar />
           <article>

@@ -3,8 +3,15 @@ import React from 'react';
 import { GalleryDataProps } from '../../../types';
 import Page from '../../components/Page';
 import TravelGallery from '../../components/TravelGallery';
+import SEO from '../../components/SEO';
 
-const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={"Israel"}>
+const TITLE = "Israel";
+
+export const Head = () => {
+  return <SEO pageTitle={TITLE} />;
+}
+
+const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={TITLE}>
   <TravelGallery data={data} />
 </Page>;
 

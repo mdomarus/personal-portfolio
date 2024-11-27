@@ -5,6 +5,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import { GalleryDataProps } from '../../types';
 import Page from '../components/Page';
+import SEO from '../components/SEO';
+
+export const Head = () => {
+  return <SEO />;
+}
 
 const Slider = ({ data }: PageProps<GalleryDataProps>) => {
   const settings: Settings = {

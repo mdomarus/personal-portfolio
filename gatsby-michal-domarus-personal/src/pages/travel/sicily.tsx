@@ -2,9 +2,16 @@ import { graphql, PageProps } from 'gatsby';
 import React from 'react';
 import { GalleryDataProps } from '../../../types';
 import Page from '../../components/Page';
+import SEO from '../../components/SEO';
 import TravelGallery from '../../components/TravelGallery';
 
-const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={"Sicily / Italy"}>
+const TITLE = "Sicily / Italy";
+
+export const Head = () => {
+  return <SEO pageTitle={TITLE} />;
+}
+
+const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={TITLE}>
   <TravelGallery data={data} />
 </Page>;
 
