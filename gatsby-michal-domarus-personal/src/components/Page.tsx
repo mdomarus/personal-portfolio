@@ -1,9 +1,10 @@
+import { PageProps, StaticQuery, graphql } from 'gatsby';
 import React, { ReactNode } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import Sidebar from './Sidebar';
+import { PageDataProps } from '../../types';
 import '../scss/style.scss';
+import Sidebar from './Sidebar';
 
-export const Head = ({ data }) => (
+export const Head = ({ data }: PageProps<PageDataProps>) => (
   <>
     <title>{data.site.siteMetadata.title}</title>
     <meta name="description" content={data.site.siteMetadata.description} />

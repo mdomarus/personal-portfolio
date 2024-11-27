@@ -1,11 +1,13 @@
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import React from 'react';
 import Slick, { Settings } from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
+import { GalleryDataProps, PageDataProps } from '../../types';
 import Page from '../components/Page';
 
-export const Head = ({ data }) => (
+
+export const Head = ({ data }: PageProps<PageDataProps>) => (
   <>
     <title>{data.site?.siteMetadata?.title}</title>
     <meta name="description" content={data.site?.siteMetadata?.description} />
@@ -13,14 +15,13 @@ export const Head = ({ data }) => (
   </>
 )
 
-const Slider = ({ data }) => {
+const Slider = ({ data }: PageProps<GalleryDataProps>) => {
   const settings: Settings = {
     autoplay: true,
     infinite: true,
     lazyLoad: 'progressive',
     fade: true,
     speed: 500,
-    slidesToShow: 1,
     slidesToScroll: 1,
   };
 

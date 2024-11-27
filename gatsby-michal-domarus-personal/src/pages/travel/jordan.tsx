@@ -1,9 +1,10 @@
+import { graphql, PageProps } from 'gatsby';
 import React from 'react';
-import { graphql } from 'gatsby';
+import { GalleryDataProps } from '../../../types';
 import Page from '../../components/Page';
 import TravelGallery from '../../components/TravelGallery';
 
-const Gallery = ({ data }) => <Page title={"Jordan"}>
+const Gallery = ({ data }: PageProps<GalleryDataProps>) => <Page title={"Jordan"}>
   <TravelGallery data={data} />
 </Page>;
 

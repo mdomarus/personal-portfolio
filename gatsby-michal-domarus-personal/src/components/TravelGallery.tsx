@@ -1,9 +1,10 @@
 import React from 'react';
+import { GalleryDataProps, Node } from '../../types';
 
-const TravelGallery = ({ data }) => (
+const TravelGallery = ({ data }: {data:GalleryDataProps}) => (
   <>
     {
-      data.allCloudinaryMedia.nodes.map((node, index) => (
+      data.allCloudinaryMedia.nodes.map((node: Node, index: number) => (
         <img
           key={node.id}
           srcSet={`
