@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "cloudinary": "^1.41.3",
+    "cloudinary": "^2.5.1",
     "lodash.snakecase": "^4.1.1"
   }
 }
