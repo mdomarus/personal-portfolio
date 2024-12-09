@@ -2,3 +2,8 @@
 
 # Michał Domarus
 ## Personal Portfolio
+
+
+## Contributing
+
+No, thanks ;)
